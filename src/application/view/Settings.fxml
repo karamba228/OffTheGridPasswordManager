@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SettingsController">
+   <top>
+      <Text fx:id="mainTitle" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Off The Grid Password Manager" textAlignment="CENTER" wrappingWidth="542.3375976085663" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <VBox fx:id="colorPickers" alignment="CENTER" prefHeight="0.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text fx:id="Button1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Button1" textAlignment="CENTER" wrappingWidth="203.7294921875" />
+            <ColorPicker fx:id="colorPicker1" layoutX="10.0" layoutY="10.0" prefHeight="47.0" prefWidth="375.0" promptText="Button1" stylesheets="@../application.css" />
+            <Text fx:id="Button2" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Button2" textAlignment="CENTER" wrappingWidth="203.7294921875" />
+            <ColorPicker fx:id="colorPicker2" layoutX="10.0" layoutY="57.0" prefHeight="47.0" prefWidth="375.0" stylesheets="@../application.css" />
+            <Text fx:id="Button3" fill="WHITE" layoutX="10.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Button3" textAlignment="CENTER" wrappingWidth="203.7294921875" />
+            <ColorPicker fx:id="colorPicker3" layoutX="10.0" layoutY="104.0" prefHeight="47.0" prefWidth="375.0" stylesheets="@../application.css" />
+            <Text fx:id="Button4" fill="WHITE" layoutX="10.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Button4" textAlignment="CENTER" wrappingWidth="203.7294921875" />
+            <ColorPicker fx:id="colorPicker4" layoutX="10.0" layoutY="151.0" prefHeight="47.0" prefWidth="375.0" stylesheets="@../application.css" />
+            <Text fx:id="Button5" fill="WHITE" layoutX="10.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Button5" textAlignment="CENTER" wrappingWidth="203.7294921875" />
+            <ColorPicker fx:id="colorPicker5" layoutX="10.0" layoutY="194.0" prefHeight="47.0" prefWidth="375.0" stylesheets="@../application.css" />
+            <Text fx:id="Button6" fill="WHITE" layoutX="10.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Button6" textAlignment="CENTER" wrappingWidth="203.7294921875" />
+            <ColorPicker fx:id="colorPicker6" layoutX="10.0" layoutY="10.0" prefHeight="47.0" prefWidth="375.0" stylesheets="@../application.css" />
+         </children>
+      </VBox>
+   </center>
+   <left>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="102.0" prefWidth="115.0">
+               <children>
+                  <Circle fx:id="circle1" fill="#ffffff00" layoutX="47.0" layoutY="54.0" radius="46.0" stroke="#c6c6c6" strokeDashOffset="10.0" strokeType="INSIDE" strokeWidth="15.0" style="-fx-stroke-dash-array: 50;" AnchorPane.leftAnchor="14.0" />
+                  <Button fx:id="mainMenu" layoutX="31.0" layoutY="26.0" mnemonicParsing="false" onAction="#switchToMain" onMouseEntered="#mouseEnteredButton" onMouseExited="#mouseExitedButton" prefHeight="56.0" prefWidth="57.0" stylesheets="@../application.css" text="Main" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="108.0" prefWidth="375.0">
+               <children>
+                  <Rectangle fx:id="rectangleButtonShape" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="104.0" layoutX="112.0" stroke="WHITE" strokeType="INSIDE" width="146.0" AnchorPane.leftAnchor="112.0" AnchorPane.rightAnchor="115.71487817522035" />
+                  <Button fx:id="save" alignment="CENTER" contentDisplay="CENTER" layoutX="110.0" layoutY="-1.0" mnemonicParsing="false" onAction="#savePreferences" onMouseEntered="#mouseEnteredButton" onMouseExited="#mouseExitedButton" prefHeight="113.0" prefWidth="149.0" text="Save Preferences" textFill="WHITE" AnchorPane.leftAnchor="110.0" AnchorPane.rightAnchor="115.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="102.0" prefWidth="116.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Circle fx:id="circle2" fill="#ffffff00" layoutX="70.0" layoutY="51.0" radius="46.0" stroke="#c6c6c6" strokeDashOffset="10.0" strokeType="INSIDE" strokeWidth="15.0" style="-fx-stroke-dash-array: 50;" AnchorPane.rightAnchor="16.0" />
+                  <Button fx:id="status" layoutX="18.0" layoutY="23.0" mnemonicParsing="false" onAction="#disableAnimations" onMouseEntered="#mouseEnteredButton" onMouseExited="#mouseExitedButton" prefHeight="56.0" prefWidth="57.0" stylesheets="@../application.css" text="Disable" textFill="WHITE" AnchorPane.rightAnchor="33.96035739334614" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

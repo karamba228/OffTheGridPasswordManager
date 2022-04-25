@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="MainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" styleClass="circle" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+   <center>
+      <StackPane fx:id="borderpane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Circle fx:id="circle" fill="#ffffff00" radius="106.0" stroke="#c6c6c6" strokeDashOffset="25.0" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="15.0" style="-fx-stroke-dash-array: 45;" />
+            <SVGPath fx:id="Key" content="M 400 250 A 50 50 0 1 1 450 250 L 500 400 L 350 400 Z" onDragDropped="#handleDrop" onDragOver="#dragDetected" scaleX="0.3" scaleY="0.3" stroke="#c6c6c6" strokeDashOffset="1.0" strokeType="OUTSIDE" strokeWidth="10.0" style="-fx-stroke-dash-array: 1;" />
+         </children>
+      </StackPane>
+   </center>
+   <bottom>
+      <AnchorPane prefHeight="64.0" prefWidth="601.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="107.0" prefWidth="601.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <StackPane prefHeight="148.0" prefWidth="201.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Circle fx:id="circle1" fill="#ffffff00" radius="50.0" stroke="#c6c6c6" strokeDashOffset="10.0" strokeType="INSIDE" strokeWidth="15.0" style="-fx-stroke-dash-array: 50;" />
+                        <Button fx:id="locate" maxWidth="-Infinity" mnemonicParsing="false" onAction="#locateFile" onMouseEntered="#mouseEnteredButton" onMouseExited="#mouseExitedButton" prefHeight="58.0" prefWidth="79.0" stylesheets="@../application.css" text="Locate" textFill="WHITE" />
+                     </children>
+                  </StackPane>
+                  <StackPane prefHeight="150.0" prefWidth="200.0">
+                     <children>
+                        <Circle fx:id="circle3" fill="#ffffff00" radius="50.0" stroke="#c6c6c6" strokeDashOffset="10.0" strokeType="INSIDE" strokeWidth="15.0" style="-fx-stroke-dash-array: 50;" />
+                        <Button fx:id="settings" maxWidth="-Infinity" mnemonicParsing="false" onAction="#switchToSettings" onMouseEntered="#mouseEnteredButton" onMouseExited="#mouseExitedButton" prefHeight="58.0" prefWidth="73.0" stylesheets="@../application.css" text="Settings" textFill="WHITE" />
+                     </children>
+                  </StackPane>
+                  <StackPane prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Circle fx:id="circle2" fill="#ffffff00" radius="50.0" stroke="#c6c6c6" strokeDashOffset="10.0" strokeType="INSIDE" strokeWidth="15.0" style="-fx-stroke-dash-array: 50;" />
+                        <Button fx:id="newFile" maxWidth="-Infinity" mnemonicParsing="false" onAction="#switchToFileCreation" onMouseEntered="#mouseEnteredButton" onMouseExited="#mouseExitedButton" prefHeight="50.0" prefWidth="80.0" stylesheets="@../application.css" text="New File" textFill="WHITE" />
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </bottom>
+   <top>
+      <Text fx:id="mainTitle" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Off The Grid Password Manager" textAlignment="CENTER" wrappingWidth="542.3375976085663" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>
