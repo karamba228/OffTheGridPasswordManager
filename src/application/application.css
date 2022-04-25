@@ -1,0 +1,109 @@
+@font-face {
+    src: url("Resources/fonts/Electrolize-Regular.ttf");
+}
+#mainTitle{
+    -fx-font-family: 'Electrolize';
+    -fx-font-size: 40;
+}
+.button{
+    -fx-font-family: 'Electrolize';
+    -fx-shape: "M 250 300 A 50 50 0 1 1 450 300 A 50 50 0 1 1 250 300"; 
+    -fx-background-color: transparent;
+    -fx-font-size: 13;
+}
+.circle{
+	-fx-background-color: transparent;
+}
+.root{
+    -fx-background-image: url("Resources/background/carbonfiber.png");
+}
+
+.text-field{
+    -fx-font-size: 18;
+    -fx-border-color: white;
+    -fx-font-family: 'Electrolize';
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+.password-field{
+    -fx-font-size: 18;
+    -fx-border-color: white;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+.text-area {
+    -fx-background-color: rgba(53,89,119,0.4);
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+
+.text-area .scroll-pane .content{
+    -fx-background-color: transparent;
+}
+
+.text-area{
+    -fx-font-size: 18;
+    -fx-border-color: white;
+    -fx-font-family: 'Electrolize';
+    -fx-text-fill: white;
+}
+#toggleButton{
+     -fx-shape: "M 250 300 A 50 50 0 1 1 450 300 A 50 50 0 1 1 250 300";
+     -fx-arc-width: 50;
+     -fx-arc-height: 50;
+     -fx-fill: white;
+     -fx-stroke: gray;
+}
+#continuePrompt{
+    -fx-text-fill: white;
+}
+#Button1{
+    -fx-font-family: 'Electrolize';
+    -fx-text-fill: white;
+    -fx-font-size: 30;
+}
+#Button2{
+    -fx-font-family: 'Electrolize';
+    -fx-text-fill: white;
+    -fx-font-size: 30;
+}
+
+#Button3{
+    -fx-font-family: 'Electrolize';
+    -fx-text-fill: white;
+    -fx-font-size: 30;
+}
+
+#Button4{
+    -fx-font-family: 'Electrolize';
+    -fx-text-fill: white;
+    -fx-font-size: 30;
+}
+
+#Button5{
+    -fx-font-family: 'Electrolize';
+    -fx-text-fill: white;
+    -fx-font-size: 30;
+}
+
+#Button6{
+    -fx-font-family: 'Electrolize';
+    -fx-text-fill: white;
+    -fx-font-size: 30;
+}
+.color-picker {
+    -fx-background-color: transparent;
+    -fx-font-family: 'Electrolize';
+    -fx-border-color: white;
+    -fx-font-size: 18; 
+}
+.color-picker .color-picker-label .text {
+    -fx-fill: white;
+}
