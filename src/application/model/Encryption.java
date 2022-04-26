@@ -23,7 +23,7 @@ import javafx.scene.control.Alert.AlertType;
 /** 4/1/2022
  * This is the Encrpytion class that takes care of processing the selected files and contents in the files and either encrypts
  * that data or decrypts for use. The encryption and decryption uses a password to lock and unlock the created file with credentials
- * @authors Garrett Ashley, Evan Ashley, Eddie Morales, Eduardo Riveragarza
+ * @authors Garrett Ashley, Evan Ashley, Eddie Morales, Eduardo Riveragarza, Igor Derke
  *
  */
 public class Encryption {
@@ -78,6 +78,49 @@ public class Encryption {
 		processFile(cipher,output,amountOfBytesInArray(arrayCredentials),arrayCredentials);
 		arrayCredentials = null;
 		Alert alert = new Alert(AlertType.INFORMATION,"You have successfully created your file. Please make a backup of your file to prevent any unexpected data loss.", ButtonType.OK);
+		alert.showAndWait();
+		}catch(Exception e) {
+			System.out.println("Something went wrong, try again");
+		}
+	}
+	
+public void updateFile(String password, List<Credentials> credentials, String destination){
+		
+		String [] arrayCredentials = new String[4 * credentials.size()];
+		short k = 0;
+		for(short i = 0; i < credentials.size(); i++) {
+				arrayCredentials[k] = credentials.get(i).getEmail()+",";
+				k++;
+				arrayCredentials[k] = credentials.get(i).getPassword()+",";
+				k++;
+				arrayCredentials[k] = credentials.get(i).getUrl()+",";
+				k++;
+				arrayCredentials[k] = credentials.get(i).getNotes()+",";
+				k++;
+		}
+		credentials.clear();
+		try {
+		FileOutputStream output = new FileOutputStream(destination+"/encryptedfile.ofg");
+		byte[] salt = new byte[8];
+
+		SecretKeyFactory secretKeyFactory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+		KeySpec keySpec = new PBEKeySpec(password.toCharArray(), salt, 65536,256);
+		SecretKey secretKey = secretKeyFactory.generateSecret(keySpec);
+		SecretKey secret = new SecretKeySpec(secretKey.getEncoded(), "AES");
+
+		Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+		cipher.init(Cipher.ENCRYPT_MODE, secret);
+		AlgorithmParameters params = cipher.getParameters();
+
+		FileOutputStream ivOutFile = new FileOutputStream(destination+"/iv.enc");
+		byte[] iv = params.getParameterSpec(IvParameterSpec.class).getIV();
+		ivOutFile.write(salt);
+		ivOutFile.write(iv);
+		ivOutFile.close();
+		
+		processFile(cipher,output,amountOfBytesInArray(arrayCredentials),arrayCredentials);
+		arrayCredentials = null;
+		Alert alert = new Alert(AlertType.INFORMATION,"File has been successfuly updated!", ButtonType.OK);
 		alert.showAndWait();
 		}catch(Exception e) {
 			System.out.println("Something went wrong, try again");

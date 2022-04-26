@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 /** 4/1/2022
  * This is the main controller that manages the data that is requested in the
  * main menu and also manages the visuals in the main menu.
- * @authors Garrett Ashley, Evan Ashley, Eddie Morales
+ * @authors Garrett Ashley, Evan Ashley, Eddie Morales, Igor Derke
  *
  */
 public class FileHandlingController{ 
@@ -166,5 +166,16 @@ public class FileHandlingController{
 				encryption.encryptFile(passwordController.passwordPromptForEncryption("New Password","Enter new password "
 						+ "for file encryption"), credentials, absolutePath);
 		}
+	}
+	/**
+	 * this method will gather all the inputed data and combine it in the updateFile method to encrypt the data 
+	 * the user changed
+	 * @param node this node contains the stage
+	 * @param credentials the credentials the user inputed
+	 * @throws IOException in case of an error
+	 */
+	protected void updateFile(String filepath, String filePassword, List<Credentials> credentials) throws IOException {
+		Encryption encryption = new Encryption();
+		encryption.updateFile(filePassword, credentials, filepath);
 	}
 }

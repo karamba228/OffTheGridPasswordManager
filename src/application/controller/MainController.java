@@ -11,6 +11,7 @@ import application.model.Encryption;
 import application.model.Preferences;
 import application.model.Settings;
 import application.view.Animations;
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -152,7 +153,7 @@ public class MainController implements Initializable {
 			event.consume();
 			if(enc == null)
         		return;
-			var fadeOutTransition = animation.fadeOut(MainPane);
+			FadeTransition fadeOutTransition = animation.fadeOut(MainPane);
 		    fadeOutTransition.setOnFinished(evt -> {
 		    	try {
 					switchToCredentialTableView(enc);
@@ -182,7 +183,7 @@ public class MainController implements Initializable {
 	        	Encryption enc = fileHandlingController.handleFileDecryption(selectedFile,circle,Key);
 	        	if(enc == null)
 	        		return;
-	        	var fadeOutTransition = animation.fadeOut(MainPane);
+	        	FadeTransition fadeOutTransition = animation.fadeOut(MainPane);
 			    fadeOutTransition.setOnFinished(evt -> {
 			    	try {
 						switchToCredentialTableView(enc);

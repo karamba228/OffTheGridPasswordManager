@@ -6,7 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 /** 4/1/2022
  * This is the Credentials class that process each credentials that is passed through the construct
- * @authors Garrett Ashley, Evan Ashley, Eddie Morales, Eduardo Riveragarza
+ * @authors Garrett Ashley, Evan Ashley, Eddie Morales, Eduardo Riveragarza, Igor Derke
  *
  */
 public class Credentials {
@@ -38,7 +38,7 @@ public class Credentials {
 	 * This method gets the username or email of the selected object
 	 * @return the email of the account
 	 */
-	protected String getEmail() {
+	public String getEmail() {
 		if(email.get().matches(""))
 			return "N/A";
 		return email.get();
